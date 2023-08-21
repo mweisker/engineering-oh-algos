@@ -30,4 +30,29 @@ const arrayOfProducts = (array) => {
   return output;
 }
 
-console.log(arrayOfProducts([5, 1, 4, 2]))
+const arrayOfProductsOptimized = (array) => {
+  const products = new Array(array.length).fill(1);
+
+  let leftRunningProduct = 1;
+  for (let i = 0; i < array.length; i++) {
+    products[i] = leftRunningProduct;
+    leftRunningProduct *= array[i];
+  }
+
+  console.log(products)
+
+  let rightRunningProduct = 1;
+  for (let i = array.length - 1; i >= 0; i--) {
+    products[i] *= rightRunningProduct;
+    rightRunningProduct *= array[i];
+  }
+
+  return products;
+}
+
+console.log(arrayOfProductsOptimized([5, 1, 4, 2]))
+
+/*
+leftProducts = [1, 5, 5, 20]
+rightProducts = [8, 8,  2, 1]
+*/
