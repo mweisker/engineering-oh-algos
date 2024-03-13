@@ -27,3 +27,20 @@ const mySqrtBinary = x => {
 }
 
 console.log(mySqrtBinary(1240))
+
+
+/**
+ Find the Pivot Integer
+
+ The sum of all elements between 1 and x inclusively equals the sum of all elements
+ between x and n inclusively.
+
+ Input: n = 8
+ Output: 6
+ Explanation: 6 is the pivot integer since: 1 + 2 + 3 + 4 + 5 + 6 = 6 + 7 + 8 = 21.
+ */
+
+
+const pivotInteger = n => {
+  
+}
