@@ -42,5 +42,15 @@ console.log(mySqrtBinary(1240))
 
 
 const pivotInteger = n => {
-  
+  if (n === 1) return 1;
+  let pivot = Math.ceil(n / 2);
+  while (pivot < n) {
+    let firstHalf = (pivot + 1) * (pivot / 2);
+    let secondHalf = (n + pivot) * ((n + 1 - pivot) / 2)
+    if (firstHalf === secondHalf) return pivot;
+    pivot++;
+  }
+  return -1;
 }
+
+console.log(pivotInteger(1))
